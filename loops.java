@@ -1,62 +1,66 @@
-package javaTraining;
+package training;
 
 public class loops {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		// 5*1=5
-
-		// multiplicationtable(5);
-		// multiplicationtable(8);
-		multiplicationtable(7, 11, 20);
-		// whilemultiplicationtable(7, 11, 20);
-		// dowhilemultiplicationtable(7, 11, 20);
-	}
-
-	static void multiplicationtable(int i) {
-		// syntax of for loop
-		// for(variable;condition;incremental/decremental operation)
-		for (int j = 1; j <= 10; j++) {
-			System.out.println(i + " X " + j + "=" + i * j);
+	public static void forloop(){
+		System.out.println("for loop");
+		//syntax for a for loop
+		//initializition (Only at start of the loop);condition(every run in the loop); increment/decrementoperator(everytime until condition satsifies)
+		for(int i=1;i<=10;i++){		
+		System.out.println("5*"+ i+"= "+5*i);
 		}
 	}
-	static void multiplicationtable(int table, int from, int to) {
-		// syntax of for loop
-		// for(variable;condition;incremental/decremental operation)
-		for (int k = from; k <= to; k++) {
-			System.out.println(table + " X " + k + "=" + table * k);
-			// nested if
-			if (k > 16) {
-				if (k == 17) {
-					break;
-				}
-
-			} else if (k > 21) {
-
-			} else {
-
-			}
+	
+	public static void forloop(int table,int from,int to){
+		System.out.println("for loop with parameters");
+		//syntax for a for loop
+		//initializition (Only at start of the loop);condition(every run in the loop); increment/decrementoperator(everytime until condition satsifies)
+		for(int i=from;i<=to;i++){		
+		System.out.println(table+"*"+ i+"= "+table*i);
 		}
 	}
-
-	static void whilemultiplicationtable(int table, int from, int to) {
-		// syntax of while loop
-		// while(condition)
-		int k = from;
-		while (k <= to) {
-			System.out.println(table + " X " + k + "=" + table * k);
-			k++;
+	
+	
+	public static void whileloop(){
+		System.out.println("while loop");
+		int i=1;
+		//syntax for while loop
+		//while(condition)
+		while(i<=10){
+			System.out.println("5*"+ i+"= "+5*i);
+			i++;
 		}
 	}
-
-	static void dowhilemultiplicationtable(int table, int from, int to) {
-		// syntax of dowhile loop
-		// while(condition)
-		int k = from;
-		do {
-			System.out.println(table + " X " + k + "=" + table * k);
-			k++;
-		} while (k <= to);
+	public static void whileloop(boolean check){
+		System.out.println("while loop with parameters");
+		int i=1;
+		//syntax for while loop
+		//while(condition)
+		while(!check){
+			System.out.println("5*"+ i+"= "+5*i);
+			i++;
+		}
 	}
-
+	public static void dowhileloop(){
+		System.out.println("do while loop");
+		int i=1;
+		//syntax for do while loop
+		//first execute code and check for condition
+		do{
+			System.out.println("5*"+ i+"= "+5*i);
+			i++;
+		}while(i<=10);
+	}
+	
+	public static void dowhileloop(boolean check){
+		System.out.println("do while loop");
+		int i=1;
+		//syntax for do while loop
+		//first execute code and check for condition
+		do{
+			System.out.println("5*"+ i+"= "+5*i);
+			i++;
+		}while(check);
+	}
+	
 }
