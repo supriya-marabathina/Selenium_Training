@@ -45,6 +45,9 @@ public class locators {
 		driver.manage().window().maximize();
 		//driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']")).sendKeys("alexa");
 		//driver.findElement(By.xpath("//*[@id='twotabsearchtextbox']")).sendKeys("alexa");
+		
+		driver.findElement(By.xpath("(//div[@id='nav-xshop']/a/following::a)[1]")).click();
+		driver.findElement(By.xpath("(//div[@id='nav-xshop']/a/following-sibling::a)[3]")).click();
 		driver.findElement(By.xpath("//*[@type='text'][@dir='auto']")).sendKeys("speaker");
 		Thread.sleep(2000);
 		System.out.println(driver.findElement(By.xpath("//*[@type='text'][@dir='auto']")).getTagName());
