@@ -8,6 +8,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import net.bytebuddy.implementation.EqualsMethod;
+
 public class dropdowns {
 
 	public static void main(String[] args) {
@@ -19,7 +21,7 @@ public class dropdowns {
 		driver.manage().window().maximize();
 		//staticdropdown(driver);
 		driver.findElement(By.xpath("//li[@data-cy='account']")).click();
-		driver.findElement(By.xpath("//li[@class='makeFlex column makeRelative vrtlCenter conCurLang geoSwitcher']/div")).click();
+		/*driver.findElement(By.xpath("//li[@class='makeFlex column makeRelative vrtlCenter conCurLang geoSwitcher']/div")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[@class='selectConWrap']")).click();
 		Thread.sleep(2000);
@@ -27,7 +29,36 @@ public class dropdowns {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div/label[@for='araLang']")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//button[text()='Apply']")).click();
+		driver.findElement(By.xpath("//button[text()='Apply']")).click();*/
+		
+		driver.findElement(By.id("fromCity")).click();
+		driver.findElement(By.xpath("//input[@placeholder='From']")).sendKeys("mum");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//li/div/div/p[contains(text(),'Mumbai')])[1]")).click();
+		//driver.findElement(By.xpath("(//li/div/div/p[contains(text(),'Mumbai')])[1]")).getText();
+		System.out.println(driver.findElement(By.id("fromCity")).getAttribute("value"));
+		
+		System.out.println(driver.findElement(By.id("fromCity")).getAttribute("scrollHeight"));
+        String value = driver.findElement(By.xpath("//span[@data-cy='defaultFromValue']")).getText();
+        
+        System.out.println(value);      
+        
+		Thread.sleep(2000);
+		
+		if(!driver.findElement(By.xpath("//input[@placeholder='To']")).isDisplayed()){
+		driver.findElement(By.id("toCity")).click();
+		}
+		driver.findElement(By.xpath("//input[@placeholder='To']")).sendKeys("del");
+		driver.findElement(By.xpath("(//li/div/div/p[contains(text(),'Delhi')])[1]")).click();
+		Thread.sleep(2000);
+		/*if(driver.findElement(By.xpath("//input[@placeholder='To']")) != null){
+			driver.findElement(By.id("toCity")).click();
+		}
+		driver.findElement(By.xpath("//input[@placeholder='To']")).sendKeys("ben");
+		driver.findElement(By.xpath("(//li/div/div/p[contains(text(),'Bengaluru')])[1]")).click();*/
+		//driver.findElement(By.xpath("//div[contains(@class,'DayPicker-Day--today')]")).click();
+		driver.findElement(By.xpath("(//div[@class='DayPicker-Months']/div[contains(@class,'DayPicker-Month')])[2]//div[@class='DayPicker-Week'][1]/div[6]")).click();
+		Thread.sleep(2000);
 		driver.close();
 		}catch(Exception e){
 			System.out.println(e);
