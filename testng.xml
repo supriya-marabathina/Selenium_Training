@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Admin flow">
+  <test name="authentication">
+    <classes>
+      <class name="testngtraining.testngclass"/>      
+    </classes>
+  </test> 
+  <test name="login">
+    <classes>
+      <class name="testngtraining.testngclass2">
+      <methods>
+      <exclude name="creditcard"/></methods>
+      </class>
+      
+      <class name="testngtraining.testngclass3"/>
+    </classes>
+  </test> 
+</suite> 
