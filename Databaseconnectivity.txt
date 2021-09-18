@@ -1,0 +1,18 @@
+//fetch employee_id from employee table
+
+select employee_id from employee;
+
+//employee table has id and name and
+//address table has name and address
+
+//fetch address using employee_id
+
+select address from address where name in(select name from employee where employee_id=1222345);
+
+select ad.address from address ad,employee em where ad.name=em.name and em.employee_id =1222345; 
+
+
+
+///we need ojdb7.jar for connecting to sql database
+// connectionstring,username and password are required to connect to a database
+//connectionstring contains hostname,port,servicename
