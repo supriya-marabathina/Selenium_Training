@@ -9,7 +9,7 @@ select employee_id from employee;
 
 select address from address where name in(select name from employee where employee_id=1222345);
 
-select ad.address from address ad,employee em where ad.name=em.name and em.employee_id =1222345; 
+select ad.address from address ad,employee em where ad.name=em.name and em.employee_id =1222465; 
 
 
 
